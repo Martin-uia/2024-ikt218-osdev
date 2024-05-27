@@ -1,4 +1,33 @@
 
+const char* custom_ascii_art =
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+" _    _ _____             _____ _____  _____    _____  ___  \n"
+"| |  | |_   _|   /\\      / ____|  __ \\|  __ \\  | ____|/ _ \\ \n"
+"| |  | | | |    /  \\    | |  __| |__) | |__) | | |__ | | | |\n"
+"| |  | | | |   / /\\ \\   | | |_ |  _  /|  ___/  |___ \\| | | |\n"
+"| |__| |_| |_ / ____ \\  | |__| | | \\ \\| |   _   ___) | |_| |\n"
+" \\____/|_____/_/    \\_\\  \\_____|_|  \\_\\_|  (_) |____/ \\___/ \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n"
+"                                                            \n";
+
+
 extern "C"{
     #include "libc/system.h"
     #include "memory/memory.h"
@@ -6,6 +35,7 @@ extern "C"{
     #include "interrupts.h"
     #include "input.h"
     #include "song/song.h"
+    #include "monitor.h"
 }
 
 
@@ -107,30 +137,23 @@ int kernel_main(){
 
 
     Song* songs[] = {
-
-        new Song({battlefield_1942_theme, sizeof(battlefield_1942_theme) / sizeof(Note)}),
-        new Song({starwars_theme, sizeof(starwars_theme) / sizeof(Note)}),
-        new Song({music_1, sizeof(music_1) / sizeof(Note)}),
-        new Song({music_6, sizeof(music_6) / sizeof(Note)}),
-        new Song({music_5, sizeof(music_5) / sizeof(Note)}),
-        new Song({music_4, sizeof(music_4) / sizeof(Note)}),
-        new Song({music_3, sizeof(music_3) / sizeof(Note)}),
-        new Song({music_2, sizeof(music_2) / sizeof(Note)})
+        new Song({you_have_been_rick_rolled, sizeof(you_have_been_rick_rolled) / sizeof(Note)}),
     };
     uint32_t n_songs = sizeof(songs) / sizeof(Song*);
 
     // Create a song player and play each song
     SongPlayer* player = create_song_player();
     for(uint32_t i = 0; i < n_songs; i++) {
-        printf("Playing Song...\n");
+        printf("Playing Song... :)\n");
         player->play_song(songs[i]);
-        printf("Finished playing the song.\n");
+        printf("You have been Rick Rolled!\n");
     }
 
     // Main loop
-    printf("Kernel main loop\n");
+    printf("Kernel main loooop\n");
     while(true) {
-        // Kernel main tasks
+        printf("%s\n", custom_ascii_art);
+        for (volatile int i = 0; i < 1000000000; i++);
     }
 
     // This part will not be reached
