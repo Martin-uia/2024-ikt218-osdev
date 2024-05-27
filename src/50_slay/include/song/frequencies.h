@@ -3,23 +3,6 @@
 #define UIAOS_FREQUENCIES_H
 
 // Note frequencies (in Hz)
-#define B4 494
-#define C5 523
-#define D5 587
-#define E5 659
-#define Fs4 370
-#define G4 392
-#define A4 440
-#define As4 466
-#define B4 494
-#define C5 523
-#define D5 587
-#define E5 659
-#define Fs5 740
-#define G5 784
-#define A5 880
-
-
 
 #define C0 16
 #define Cs0 17
