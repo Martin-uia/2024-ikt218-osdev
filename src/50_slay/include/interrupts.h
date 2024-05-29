@@ -103,7 +103,6 @@ extern void irq13();
 extern void irq14();
 extern void irq15();
 
-
 void init_irq();
 void init_interrupts();
 
@@ -133,18 +132,11 @@ struct int_handler_t {
 void register_irq_handler(int irq, isr_t handler, void* ctx);
 void register_interrupt_handler(uint8_t n, isr_t handler, void*);
 
-
 static struct int_handler_t int_handlers[IDT_ENTRIES];
 static struct int_handler_t irq_handlers[IRQ_COUNT];
 
 
 #define IRQ_COUNT 16
-
-
-
-
-
-
 
 
 
