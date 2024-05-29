@@ -13,5 +13,5 @@ iso
 build.ninja
 .ninja*
 
-50_slay
-src/50_slay/src/kernel.c
+00_per_arne
+src/group_name/src/kernel.c
